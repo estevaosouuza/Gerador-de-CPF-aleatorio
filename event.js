@@ -1,28 +1,28 @@
 
 var aleat = 10;
 function gerar() {
-  //obtem o elemento apenas uma vez no inicio em vez de todas as vezes que gera o cpf
+ 
 const cpf = document.getElementById("cpf"); 
 
 function gerarCpf() {
-  const num1 = aleatorio(); //aleatorio já devolve string, logo não precisa de toString
+  const num1 = aleatorio(); 
   const num2 = aleatorio();
   const num3 = aleatorio();
 
-  const dig1 = dig(num1, num2, num3); //agora só uma função dig
-  const dig2 = dig(num1, num2, num3, dig1); //mesma função dig aqui
+  const dig1 = dig(num1, num2, num3); 
+  const dig2 = dig(num1, num2, num3, dig1); 
 
-  //aqui com interpolação de strings fica bem mais legivel
+
   cpf.innerHTML +=`${num1}.${num2}.${num3}-${dig1}${dig2}`+"<br>";
 }
 
-//o quarto parametro(n4) só será recebido para o segundo digito
+
 function dig(n1, n2, n3, n4) { 
   
-  //as concatenações todas juntas uma vez que são curtas e legíveis
+ 
   let nums = n1.split("").concat(n2.split(""), n3.split(""));
   
-  if (n4){ //se for o segundo digito coloca o n4 no sitio certo
+  if (n4){ 
     nums[9] = n4;
   }
   
